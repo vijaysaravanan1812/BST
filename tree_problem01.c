@@ -70,18 +70,13 @@ node insert(node root,int data)
 int main()
 {
     node root = NULL;
-    int x,i = 0;
-    printf("Enter the element to form binary tree\n");
-    while (1)
-    {
-        printf("Enter the data to insert\n");
-        scanf("%d",&x);
-        root = insert(root, x);
-        if (i == 10)
-            break;
-        system("clear");
-        i++;
-    }
+    
+    root = insert(root, 14);
+    root = insert(root,23);
+    root = insert(root , 12);
+    root = insert(root, 43);
+    root = insert(root , 92);
+    root = insert (root , 13);
     
     printf("pre order \t");
     pre_order(root);

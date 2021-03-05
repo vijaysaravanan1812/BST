@@ -4,7 +4,7 @@
 #include<stdlib.h>
 #include"lib.c"
 
-int find_min(node root)
+int Find_min(node root)
 {
     if (root == NULL)
     {
@@ -13,7 +13,7 @@ int find_min(node root)
     }
     else if (root->left == NULL )
         return root->data;
-    return find_min(root->left);
+    return Find_min(root->left);
 } 
 
 
@@ -21,17 +21,17 @@ node delete_node(node root,int data)
 {
     if (root == NULL)
     {
+        printf("NO ELEMENT FOUND\n");
+        getchar();
         return root;
     }
     else if (data < root ->data)
     {
         root->left = delete_node(root->left,data);
-        return root;
     }
     else if (data > root ->data)
     {
-        root->right = delete_node(root->right,data);
-        return root;
+       root->right =  delete_node(root->right,data);
     }
     
     //Now we get that element 
@@ -62,7 +62,7 @@ node delete_node(node root,int data)
         //case 3: root (node) has two children
         else
         {
-            root->data = find_min(root->right);
+            root->data = Find_min(root->right);
             root ->right = delete_node(root->right, root->data);   
             return root; 
         }
@@ -77,7 +77,7 @@ int main()
 {
     int element;
     node root = NULL;
-    create_tree(&root);
+   create_tree(&root);
     printf("\n");
     while (root != NULL)
     {

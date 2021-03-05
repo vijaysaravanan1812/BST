@@ -55,9 +55,9 @@ void print_tree(node root)
 {
     if (root == NULL)
         return;
-    in_order(root->left);
+    print_tree(root->left);
     printf("%d \t",root->data);
-    in_order(root->right);
+    print_tree(root->right);
 }
 
 node get_node(int x)
