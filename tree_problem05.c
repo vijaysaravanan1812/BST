@@ -56,7 +56,7 @@ node delete_node(node root,int data)
         {
             node temp = root;
             root = root ->left;
-            free(temp);
+            free(temp); 
             return root;
         }
         //case 3: root (node) has two children
